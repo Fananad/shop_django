@@ -30,6 +30,7 @@ class Product(models.Model):
     is_active=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateField(auto_now=True)
+    slug = models.SlugField(max_length=255, blank=True)
 
     class Meta:
         verbose_name_plural='Products'
