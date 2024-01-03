@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>{% block title %}SberShop{% endblock %}</title>
+    <title>{% block title %}SberCyberShop{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -24,16 +24,16 @@
             <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Enterprise</a>
             <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Support</a>
             <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Pricing</a>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Сategories</a>
-        </nav>
-        
-        
-        </div>
-    
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h1 class="display-4 fw-normal text-body-emphasis">Добро пожаловать в магазин департамента!</h1>
-          <p class="fs-5 text-body-secondary">Здесь ты можешь прикупить парочку крассивый вещей с атрибутикой своей команды.</p>
-        </div>
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for category in categories %}
+                      <li><a class="dropdown-item" href="#">{{ category.name }}</a></li>
+                  {% endfor %}
+              </ul>
+          </div>
+        </nav>    
+        </div>    
       </header>
     <div id="content">{% block content %} {% endblock %}</div>
 </body>
