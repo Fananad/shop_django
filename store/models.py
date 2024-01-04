@@ -32,6 +32,11 @@ class Product(models.Model):
     updated=models.DateField(auto_now=True)
     slug = models.SlugField(max_length=255, blank=True)
 
+
+    def get_absolute_url(self):
+        return reverse('store:product_detail', args=[self.slug])
+
+
     class Meta:
         verbose_name_plural='Products'
         ordering = ('-created',)
