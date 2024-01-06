@@ -23,7 +23,7 @@ class TestProductModel(TestCase):
         Category.objects.create(name='str_name', slug='str_slug')
         User.objects.create(username='admin')
         self.data_product_default = Product.objects.create(category_id=1, title='django beginners', created_by_id=1,
-                                            slug='django-beginners', price='20.00', image='django')
+                                            slug='django-beginners', price='20.000', image='django')
         self.data_product_no_active = Product.objects.create(category_id=1, title='django advanced', created_by_id=1,
                                             slug='django-advanced', price='20.00', image='django', is_active=False)
     def test_products_model_entry(self):

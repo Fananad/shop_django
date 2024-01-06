@@ -15,6 +15,9 @@ def all_products(request):
 def about(request):
     return render(request, 'about/about.html')
 
+def help(request):
+    return render(request, 'about/help.html')
+
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, in_stock=True)
